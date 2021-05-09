@@ -51,7 +51,7 @@ This folder contains the code and instructions to train jigsaw puzzle pretext ta
 
 
 
-# Jigsaw Puzzle solving:
+# Jigsaw Puzzle solving pretext task:
 Contains the files neccessary to train jigsaw puzzle solver network following the paper [Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzles](https://arxiv.org/abs/1603.09246) and use it for image captioning downstream task.
 The impelementation of the code builds on Jeremalloch work in https://github.com/Jeremalloch/Semisupervised_Image_Classifier.
 the differences are as follows:
@@ -81,12 +81,6 @@ Generate the puzzle patches using image_processing.py to train the keras model
 This folder contains the code and instructions to train jigsaw puzzle pretext task to learn to  extract features, and using it on image captioning downstream task.
 
 # Instructions on running the code
-## Getting started 
-Create a conda environment using the dependencies file:
-
-```sh
-conda env create -f environment.yml
-```
 ## pretext task
 1. Create the HDF5 dataset (the model expects the data to be in HDF5 file) using the to_hdf5.py specifing the path and desired image size.
 2. Create the desired number permutations using maximal_hamming.py in hamming_set by providing number of permutations, which will create a text file with the permutations.
@@ -100,7 +94,7 @@ conda env create -f environment.yml
 2. Using jigsaw_vocabulary to generate the vocabulary file (descriptions.txt) of the flickr dataset.
 2. Using Jigsaw__IC_model to train the captioning model on the extracted features by spicifying the extracted features file location and the descriptions file.
 3. Jigsaw_test_blue.py to check the model blue score, requires only the extracted features file location.
-4. jigsaw_test_images.py used to test the trained captioning model on images, need specify image location and the used image captioning model.
+4. Jigsaw_test_images.py used to test the trained captioning model on real images, need specify image location and the used image captioning model.
 
 # pre-trained models
 1. Pre-trained model for jigsaw with Resnet 50 with 67% accuracy on pretext task [Jigsaw_ResNet50](https://mbzuaiac-my.sharepoint.com/:u:/g/personal/20020053_mbzuai_ac_ae/Ed2xPGXaqqpNuQfawHm5HvYBUbW4fL3HNLnTr9HAcrtDvQ?e=3OnR8N)
