@@ -14,7 +14,7 @@ the differences are as follows:
 1. our impelentation includes using gray images in training
 2. including color jittering and make a case for gray images
 3. applaying patch level normalization
-4. using Alex-net as impelemented in the paper and ResNet50 for networks backbone
+4. using Alex-net as impelemented in the paper and ResNet50 for shared networks
 ## Dataset
 The dataset used in training is MSCOCO unlabeled 2017, available on https://cocodataset.org/#download
 ## Code flow
