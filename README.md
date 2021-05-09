@@ -38,7 +38,7 @@ the differences are as follows:
 4. applaying normalization on patch level
 
 ## Dataset
-The dataset used in training is MSCOCO unlabeled 2017, available on [MSCOCO unlabeled 2017](https://cocodataset.org/#download)
+The dataset used in training is MSCOCO unlabeled 2017, available  [MSCOCO unlabeled 2017](http://images.cocodataset.org/zips/unlabeled2017.zip) 
 ## method components:
 #### image_preprocessing:
 contains image_transform.py that is used for image preprocessing for jigsaw, which include  the functions to create the croppings and to apply the color jittering
