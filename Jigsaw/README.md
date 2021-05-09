@@ -18,10 +18,10 @@ conda env create -f environment.yml
 1. Using Jigsaw_feature_extraction.py, load the trained model and spacify dataset directory, and choose one of two functions  to extract the features: 
   - Full network uses the last dense layer before the soft max of the whole architecture for features extraction, must specify the same imgae size parameters used in training.
   -  Single network intialize a ResNet50 with the trained weights and use the GAP layer for feature extraction (not recommended).
-2. Using jigsaw_vocabulary to generate the vocabulary which generates the descriptions.txt.
-2. Using Jigsaw__IC_model to train the captioning model on the extracted features by spicifying the extracted features file location.
+2. Using jigsaw_vocabulary to generate the vocabulary file (descriptions.txt) of the flickr dataset.
+2. Using Jigsaw__IC_model to train the captioning model on the extracted features by spicifying the extracted features file location and the descriptions file.
 3. Jigsaw_test_blue.py to check the model blue score, requires only the extracted features file location.
-4. jigsaw_test_images.py used to test the captioning models on images, need specify image location and the image caption model.
+4. jigsaw_test_images.py used to test the trained captioning model on images, need specify image location and the used image captioning model.
 
 # pre-trained models
 1. Pre-trained model for jigsaw with Resnet 50 with 67% accuracy on pretext task [Jigsaw_ResNet50](https://mbzuaiac-my.sharepoint.com/:u:/g/personal/20020053_mbzuai_ac_ae/Ed2xPGXaqqpNuQfawHm5HvYBUbW4fL3HNLnTr9HAcrtDvQ?e=3OnR8N)
