@@ -118,10 +118,7 @@ def create_sequences(tokenizer, max_length, descriptions, photos, vocab_size):
 # define the captioning model
 def define_model(vocab_size, max_length):
 	# feature extractor model
-
-	#inputs1 = Input(shape=(4096,))
-	#inputs1 = Input(shape=(2048,))
-	inputs1 = Input(shape=(1024,))
+	inputs1 = Input(shape=(2048,))
 
 	fe1 = Dropout(0.5)(inputs1)
 	fe2 = Dense(256, activation='relu')(fe1)
