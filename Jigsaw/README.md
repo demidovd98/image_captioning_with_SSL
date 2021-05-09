@@ -15,5 +15,5 @@
 4. 4_jigsaw_test.py used to test the captioning models on images, need specify image location and the image caption model.
 
 # pre-trained models
-1. pre-trained model for jigsaw with Resnet 50 with 67% accuracy on pretext task [Jigsaws_ResNet50](https://mbzuaiac-my.sharepoint.com/:u:/g/personal/20020053_mbzuai_ac_ae/Ed2xPGXaqqpNuQfawHm5HvYBUbW4fL3HNLnTr9HAcrtDvQ?e=3OnR8N)
+1. pre-trained model for jigsaw with Resnet 50 with 67% accuracy on pretext task [Jigsaw_ResNet50](https://mbzuaiac-my.sharepoint.com/:u:/g/personal/20020053_mbzuai_ac_ae/Ed2xPGXaqqpNuQfawHm5HvYBUbW4fL3HNLnTr9HAcrtDvQ?e=3OnR8N)
 2. pre-trained model of image captioning using the jigsaw extracted features [Image captioning_jigsaw](https://mbzuaiac-my.sharepoint.com/:u:/g/personal/20020053_mbzuai_ac_ae/EXHOb314z-1JlFZKr-umQ8kBOl_A9Q6s3ijJxWxknnheNQ?e=2Q00iC)
