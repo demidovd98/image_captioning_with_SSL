@@ -26,6 +26,7 @@ class DataGenerator:
         self.numChannels = numChannels
         self.numCrops = numCrops
         self.batchSize = batchSize
+        self.image_size=image_size
         self.maxHammingSet = np.array(maxHammingSet, dtype=np.uint8)
         # Determine how many possible jigsaw puzzle arrangements there are
         self.numJigsawTypes = self.maxHammingSet.shape[0]
@@ -39,7 +40,7 @@ class DataGenerator:
         dataset - an HDF5 dataset (either train or validation)
         """
         # Determine which jigsaw permutation to use
-        x = np.empty((self.batchSize, image_size, image_size, self.numChannels),
+        x = np.empty((self.batchSize, self.image_size, self.image_size, self.numChannels),
                      dtype=np.float32)
 
         x = dataset[batchIndex * self.batchSize:(batchIndex + 1) * self.batchSize, ...].astype(np.float32)
