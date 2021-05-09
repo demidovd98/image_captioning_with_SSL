@@ -32,10 +32,11 @@ conda env create -f dependencies.yml
 Contains the files to train a jigsaw network pretext following the paper [Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzles](https://arxiv.org/abs/1603.09246) and use it for image captioning downstream task.
 The impelementation of the code builds on Jeremalloch work in https://github.com/Jeremalloch/Semisupervised_Image_Classifier.
 the differences are as follows:
-1. our impelentation includes using gray images in training
-2. includes color jittering
-3. applaying normalization on patch level
-4. using Alex-net as impelemented in the paper and ResNet50 for shared networks
+1. using Alex-net as impelemented in the paper and ResNet50 for shared networks
+2. our impelentation includes using gray images in training
+3. includes color jittering
+4. applaying normalization on patch level
+
 ## Dataset
 The dataset used in training is MSCOCO unlabeled 2017, available on [MSCOCO unlabeled 2017](https://cocodataset.org/#download)
 ## method components:
