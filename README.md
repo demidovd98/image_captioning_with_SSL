@@ -29,7 +29,7 @@ The impelementation of the code is improvments on Jeremalloch work in https://gi
 the differences are as follows:
 1. our impelentation includes using gray images in training
 2. includes color jittering
-3. applaying normalization on patch
+3. applaying normalization on patch level
 4. using Alex-net as impelemented in the paper and ResNet50 for shared networks
 ## Dataset
 The dataset used in training is MSCOCO unlabeled 2017, available on https://cocodataset.org/#download
