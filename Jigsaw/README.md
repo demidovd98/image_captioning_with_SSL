@@ -1,4 +1,10 @@
 # Instructions on running the code
+## Getting started 
+Create a conda environment using the dependencies file:
+
+```sh
+pip install -r requirements.txt
+```
 ## Jigsaw pretext task
 1. create the HDF5 dataset (the model expects the data to be in HDF5 file) using the to_hdf5.py specifing the path and desired image size.
 2. create the desired number permutations using maximal_hamming.py in hamming_set by providing number of permutations, which will create a text file with the permutations
