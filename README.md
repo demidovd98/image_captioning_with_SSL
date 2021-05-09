@@ -23,10 +23,10 @@ In order to explore this property of SSL approaches, we proposed and explored tw
 For the sake of supervised and self-supervised pre-text tasks comparison, we provide the results of their comprehensive testing on the same downstream task, calculating a BLEU score and validation loss. Our proposed solution with SimCLR model used for image feature extraction achieved the following results: BLEU-1: 0.575, BLEU-2: 0.360, BLEU-3: 0.266, BLEU-4: 0.145, and validation loss of 3.415. These outcomes can be considered as competitive ones with the fully supervised solutions.
 At the end, we also provide result of conducted ablation study for the mentioned approaches, including usage of different models and theirs optimisations\footnote{Code, pre-trained models, and instructions for them are available at
 # Getting started
-Windows:
+Create a conda environment using the dependencies file:
 
 ```sh
-edit autoexec.bat
+conda env create -f dependencies.yml
 ```
 # Jigsaw:
 Contains the files to train a jigsaw network pretext following the paper [Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzles](https://arxiv.org/abs/1603.09246) and use it for image captioning downstream task.
