@@ -42,6 +42,7 @@ conda env create -f dependencies.yml
 
 ## To train a model from scratch:
 The root folder contains the code and instructions of using SimCLR model as a pretext task for extracting features for the image captioning downstream task.
+
 0. Setup environment with the provided "dependencies.yml" file.
 
 (For each foolowing step you will ned to also provide a correct path to the dataset and any updated by training file):
