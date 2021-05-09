@@ -119,11 +119,11 @@ else:
 
 hdf5_path = ' ' #path to HDF5 dataset
 batch_size = 32
-num_epochs = 1000
+num_epochs = 50
 hamming_set_size = 100 #number of permutations
 #choose either alex-net or resnet model
-#model = Resnet_50()
-model = Alex_net()
+model = Resnet_50()
+#model = Alex_net()
 model.summary()
 
 # Open up the dataset
