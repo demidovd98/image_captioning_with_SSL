@@ -32,7 +32,7 @@ files_dict["train_img"] = files[:int(0.85 * len(files))]
 files_dict["val_img"] = files[int(0.85 * len(files)):int(0.95 * len(files))]
 files_dict["test_img"] = files[int(0.95 * len(files)):]
 print("Length of files array: {}".format(len(files)))
-hdf5_output = h5py.File("./COCO_2017_unlabeled_gray_and_colored.hdf5", mode='w')
+hdf5_output = h5py.File("./COCO_2017_unlabeled.hdf5", mode='w')
 hdf5_output.create_dataset(
 "train_img", (len(files_dict["train_img"])*3, *SIZE, 3), np.uint8)
 hdf5_output.create_dataset(
