@@ -8,7 +8,7 @@ conda env create -f environment.yml
 ## Jigsaw pretext task
 1. create the HDF5 dataset (the model expects the data to be in HDF5 file) using the to_hdf5.py specifing the path and desired image size.
 2. create the desired number permutations using maximal_hamming.py in hamming_set by providing number of permutations, which will create a text file with the permutations
-3. in the main.py add the dataset path and the hamming_set (number of permutations) text file path and specify the number of permutations (max_hamming_set) with the same number of permutations
+3. in the main.py add the dataset path and the hamming_set (number of permutations) text file path and specify the number of permutations (max_hamming_set) to use from the permutations list (choose the same number if you want to use all the created permutations)
 4. in case of using different image size, need to be specified in the dataset creation, datagenerator creation(image_size parameter) and in image_transform ( where
  crop size is the size of the random crop, cell size  is the size of large patch, and tile size is the final size of the patch)
 
