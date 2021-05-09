@@ -22,7 +22,7 @@ Along with the code, we also provide pre-trained models for image captionig task
 
 
 # Acknowledgements:
-1. The impelementation of the caption generator code is adopted from the Jason's Brownlee work at [Acknowledgement](https://machinelearningmastery.com/develop-a-deep-learning-caption-generation-model-in-python/).
+1. The impelementation of the caption generator code is adopted from the Jason's Brownlee work at [Machine learning mastery blog](https://machinelearningmastery.com/develop-a-deep-learning-caption-generation-model-in-python/).
 2. The idea of the Jigsaw Puzzle solver implementation is adopted from the [Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzles](https://arxiv.org/abs/1603.09246). The impelementation of the code builds on Jeremalloch work in https://github.com/Jeremalloch/Semisupervised_Image_Classifier.
 3. The idea of the SimCLR implementation is adopted from the [A Simple Framework for Contrastive Learning of Visual Representations](https://arxiv.org/pdf/2002.05709.pdf).
 
