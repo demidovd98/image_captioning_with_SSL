@@ -5,7 +5,6 @@ import random
 import time
 import itertools
 import warnings
-import cv2
 from PIL import Image
 class JigsawCreator: 
     """
