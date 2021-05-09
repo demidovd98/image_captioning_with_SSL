@@ -131,7 +131,7 @@ def evaluate_model(model, descriptions, photos, tokenizer, max_length):
 # prepare tokenizer on train set
 
 # load training dataset (6K)
-filename = '/home/student/Downloads/Semisupervised_Image_Classifier-master/Flickr8k/Flickr8k_text/Flickr_8k.trainImages.txt'
+filename = './Flickr_8k.trainImages.txt'
 train = load_set(filename)
 print('Dataset: %d' % len(train))
 # descriptions
@@ -148,7 +148,7 @@ print('Description Length: %d' % max_length)
 # prepare test set
 
 # load test set
-filename = '/home/student/Downloads/Semisupervised_Image_Classifier-master/Flickr8k/Flickr8k_text/Flickr_8k.testImages.txt'
+filename = './Flickr_8k.testImages.txt'
 test = load_set(filename)
 print('Dataset: %d' % len(test))
 # descriptions
