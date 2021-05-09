@@ -14,6 +14,15 @@
 
 note that the lighter color refers to more acceptable captions, whereas the darker color shows less acceptable captions.
 
+# Problem Statement
+In this work a problem of generating a textual description for a given image, using self-supervised learned (SSL) approaches as a pre-text task is considered.
+Originally, the existed solutions utilised fully supervised trained models for the part of image feature extraction. However, our experiments showed that such a complex task as image captioning requires higher level of generalisation than usual models can provide. This problem could be addressed with using self-supervised learning methods, that recently showed their ability to generalise better.
+In order to explore this property of SSL approaches, we proposed and explored two solutions for the image captioning using two different self-supervised learned models, based on Jigsaw Puzzle solving and SimCLR, as a pre-text task.
+
+# Experiments
+For the sake of supervised and self-supervised pre-text tasks comparison, we provide the results of their comprehensive testing on the same downstream task, calculating a BLEU score and validation loss. Our proposed solution with SimCLR model used for image feature extraction achieved the following results: BLEU-1: 0.575, BLEU-2: 0.360, BLEU-3: 0.266, BLEU-4: 0.145, and validation loss of 3.415. These outcomes can be considered as competitive ones with the fully supervised solutions.
+At the end, we also provide result of conducted ablation study for the mentioned approaches, including usage of different models and theirs optimisations\footnote{Code, pre-trained models, and instructions for them are available at
+
 # Jigsaw:
 Contains the files to train a jigsaw network pretext following the paper and use it for image captioning downstream task.
 The impelementation of the code is improvments on Jeremalloch work in https://github.com/Jeremalloch/Semisupervised_Image_Classifier.
