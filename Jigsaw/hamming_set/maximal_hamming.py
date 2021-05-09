@@ -28,7 +28,7 @@ def gen_max_hamming_set(N):
     N - the number of permutations in the returned set
     """
     # There a 9! permutations, factorial function avoided for numba
-    NUM_PERMUTATIONS = 24
+    NUM_PERMUTATIONS = 362880
     # Use a list here since we'll be popping elements from random locations,
     # and having to delete those elements, so no speedup using a numpy array
     #  full_permutation_set = list(itertools.permutations(range(9),9))
@@ -73,7 +73,7 @@ def gen_max_hamming_set(N):
     return max_hamming_sets
 
 
-def main(num_permutations=24):
+def main(num_permutations=100):
     """
     Main function to generate hamming_distance set
     """
