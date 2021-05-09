@@ -41,7 +41,7 @@ Contain maximal_hamming.py which is used to generate the permutations
 ### to_hdf5.py:
 Resizes the dataset and converts it to hdf5 file to be used for training
 ### Datagnerator.py:
-Generate the puzzle patches using image_processing.py file to train the keras model 
+Generate the puzzle patches using image_processing.py to train the keras model 
 ### Transfer learning for image captioning:
 #### contains the files to use jigsaw on the downstream task:
 1. 1_Jigsaw_generator.py extract image features for training using the model provided
