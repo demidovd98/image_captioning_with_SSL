@@ -5,7 +5,6 @@ import random
 import time
 import itertools
 import warnings
-from PIL import Image
 class JigsawCreator: 
     """
     Creates an image processor that converts an image passed as a numpy array
