@@ -24,7 +24,7 @@ For the sake of supervised and self-supervised pre-text tasks comparison, we pro
 At the end, we also provide result of conducted ablation study for the mentioned approaches, including usage of different models and theirs optimisations\footnote{Code, pre-trained models, and instructions for them are available at
 
 # Jigsaw:
-Contains the files to train a jigsaw network pretext following the paper and use it for image captioning downstream task.
+Contains the files to train a jigsaw network pretext following the paper https://arxiv.org/abs/1603.09246 and use it for image captioning downstream task.
 The impelementation of the code is improvments on Jeremalloch work in https://github.com/Jeremalloch/Semisupervised_Image_Classifier.
 the differences are as follows:
 1. our impelentation includes using gray images in training
