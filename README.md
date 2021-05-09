@@ -50,7 +50,7 @@ For each of the foolowing step you will need to provide a correct path to a chos
 5. Run "5_test.py" file to generate a caption for any image.
 
 ## To use a pre-trained model and files:
-0. Download the pre-trained model, extracted features and descriptions, and tokenizer from the shared folder [Image_Captioning with_SimCLR](https://mbzuaiac-my.sharepoint.com/:f:/g/personal/20020067_mbzuai_ac_ae/EpbmvMjAMQlNij__vSXoOMQBdv34t5Ws47uIeUdH4LgT3A?e=xQGWWv) and put them into a "Pre-trained/" folder (to the same folder with code).
+0. Download the pre-trained model, extracted features and descriptions, and tokenizer from the shared folder [Image_Captioning with_SimCLR](https://mbzuaiac-my.sharepoint.com/:f:/g/personal/20020067_mbzuai_ac_ae/EpbmvMjAMQlNij__vSXoOMQBdv34t5Ws47uIeUdH4LgT3A?e=xQGWWv) and put them all into a "Pre-trained/" folder (does not exist by default).
 1. Run "3_BLEU.py" file to evaluate the BLEU score of the pre-trained model. (Also provide a correct path to a chosen dataset).
 2. Run "5_test.py" file to generate a caption for any image.(An image should be in the same code folder, or the full path to it should be provided).
 
