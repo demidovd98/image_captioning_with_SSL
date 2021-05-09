@@ -16,15 +16,14 @@ from keras.models import load_model
 import numpy as np
 from image_preprocessing import image_transform
 import random
-import cv2
 
 def create_croppings(numpy_array):
-	# cropSize = 339
-	# cellSize = 113
-	# tileSize = 96
-	cropSize = 225
-	cellSize = 75
-	tileSize = 64
+	cropSize = 339
+	cellSize = 113
+	tileSize = 96
+	#cropSize = 225
+	#cellSize = 75
+	#tileSize = 64
 	y_dim, x_dim = numpy_array.shape[:2]
 	# Have the x & y coordinate of the crop
 	crop_x = random.randrange(x_dim -  cropSize)
@@ -43,9 +42,10 @@ def create_croppings(numpy_array):
 			final_crops[:, :, :,row * 3 + col]= numpy_array[y_start:y_start +  tileSize, x_start:x_start +  tileSize, :]
 	x=np.transpose(final_crops,(3,0,1,2))
 	for i,img in enumerate(x):
-            # v=x[i,...]
-            norm = cv2.normalize(img, None, alpha=0, beta=1, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_32F)
-            x[i,...]=norm
+            mean, std = np.mean(x[i,...]), np.std(x[i,...])
+            if std==0:
+                continue #black image
+            x[i,...]=(x[i,...]-mean)/std
 
 	final_crops=x
 	return final_crops
@@ -207,8 +207,7 @@ print('Photos: test=%d' % len(test_features))
 # load the model
 model = load_model('/home/student/Downloads/Semisupervised_Image_Classifier-master/model_last-ep010-loss3.420-val_loss3.702.h5')
 # load and prepare the photograph
-for i in range(0,12) :
-	photo = extract_features_full_architecture("example"+str(i)+".jpg")
-	# generate description
-	description = generate_desc(model, tokenizer, photo, max_length)
-	print(str(i)+"   "+description)
+photo = extract_features_full_architecture("image.jpg")
+# generate description
+description = generate_desc(model, tokenizer, photo, max_length)
+print(description)
