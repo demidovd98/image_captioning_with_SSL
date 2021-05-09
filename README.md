@@ -17,16 +17,16 @@ the differences are as follows:
 4. using Alex-net as impelemented in the paper and ResNet50 for shared networks
 ## Dataset
 The dataset used in training is MSCOCO unlabeled 2017, available on https://cocodataset.org/#download
-## Code components 
-#### image_preprocessing
+## Code components:
+#### image_preprocessing:
 contains image_transform.py that is used for image preprocessing for jigsaw, which include  the functions to create the croppings and to apply the color jittering
-### hamming_set
+### hamming_set:
 Contain maximal_hamming.py which is used to generate the permutations
-### to_hdf5.py
+### to_hdf5.py:
 Resizes the dataset and converts it to hdf5 file to be used for training
-### Datagnerator.py
+### Datagnerator.py:
 Generate the puzzle patches using image_processing.py file to train the keras model 
-### Transfer learning for image captioning
+### Transfer learning for image captioning:
 #### contains the files to use jigsaw on the downstream task:
 1. 1_Jigsaw_generator.py extract image features for training using the model provided
 2. 2_Jigsaw_model.py uses extracted features to train the captioning model
