@@ -105,7 +105,7 @@ class JigsawCreator:
         for i,img in enumerate(x):
             mean, std = np.mean(x[i,...]), np.std(x[i,...]) #calculate mean and std of patch
             if std==0:
-                continue #black image
+                continue #black patch
             x[i,...]=(x[i,...]-mean)/std #normalize the patch
             x[i,...] = clip(x[i,...], -1.0, 1.0)
             x[i,...] = (x[i,...] + 1.0) / 2.0 #for negative values, make the image between 0 and 1
