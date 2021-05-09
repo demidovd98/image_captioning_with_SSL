@@ -11,7 +11,6 @@ import numpy as np
 from keras.layers import (Dense, Dropout, Concatenate, Input, Activation, Flatten, Conv2D,
                           MaxPooling2D, GlobalAveragePooling2D, BatchNormalization, add)
 import random
-import cv2
 def create_croppings(numpy_array):
 	cropSize = 339
 	cellSize = 113
