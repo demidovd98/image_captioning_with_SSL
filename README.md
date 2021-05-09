@@ -29,16 +29,16 @@ Create a conda environment using the dependencies file:
 conda env create -f dependencies.yml
 ```
 # Jigsaw:
-Contains the files to train a jigsaw network pretext following the paper [Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzles](https://arxiv.org/abs/1603.09246) and use it for image captioning downstream task.
+Contains the files neccessary to train jigsaw puzzle solver network following the paper [Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzles](https://arxiv.org/abs/1603.09246) and use it for image captioning downstream task.
 The impelementation of the code builds on Jeremalloch work in https://github.com/Jeremalloch/Semisupervised_Image_Classifier.
 the differences are as follows:
-1. using Alex-net as impelemented in the paper and ResNet50 for shared networks
-2. our impelentation includes using gray images in training
-3. includes color jittering
-4. applaying normalization on patch level
+1. Using Alex-net as impelemented in the paper and ResNet50 for shared networks instead of the used Resnet34 and trivial net
+2. Our impelentation includes using gray images in training
+3. Includes color jittering
+4. Applaying normalization on patch level
 
 ## Dataset
-The dataset used in training is MSCOCO unlabeled 2017,from https://cocodataset.org can be downoaded here  [MSCOCO unlabeled 2017](http://images.cocodataset.org/zips/unlabeled2017.zip) 
+The dataset used in training is MSCOCO unlabeled 2017,from https://cocodataset.org, can be downoaded here  [MSCOCO unlabeled 2017](http://images.cocodataset.org/zips/unlabeled2017.zip) 
 ## method components:
 #### image_preprocessing:
 contains image_transform.py that is used for image preprocessing for jigsaw, which include  the functions to create the croppings and to apply the color jittering
