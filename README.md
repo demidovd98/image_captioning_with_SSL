@@ -80,14 +80,14 @@ Generate the puzzle patches using image_processing.py to train the keras model
 5. jigsaw_test_images.py used to generate descriptions of provided images
 This folder contains the code and instructions to train jigsaw puzzle pretext task to learn to  extract features, and using it on image captioning downstream task.
 
-# Instructions on running the code
-## Pretext Task
+## Instructions on running the code
+### Pretext Task
 1. Create the HDF5 dataset (the model expects the data to be in HDF5 file) using the to_hdf5.py specifing the path and desired image size.
 2. Create the desired number permutations using maximal_hamming.py in hamming_set by providing number of permutations, which will create a text file with the permutations.
 3. In the main.py add the dataset path and the hamming_set (number of permutations) text file path and specify the number of permutations (max_hamming_set) to use from the permutations list (choose the same number if you want to use all the created permutations).
 4. In case of using different image size, need to be specified in the dataset creation, datagenerator creation(image_size parameter) and in image_transform ( where crop size is the size of the random crop, cell size  is the size of large patch, and tile size is the final size of the patch).
 
-## Downstream Task
+### Downstream Task
 1. Using Jigsaw_feature_extraction.py, load the trained model and spacify dataset directory, and choose one of two functions  to extract the features: 
   - Full network uses the last dense layer before the soft max of the whole architecture for features extraction, must specify the same imgae size parameters used in training.
   -  Single network intialize a ResNet50 with the trained weights and use the GAP layer for feature extraction (not recommended).
