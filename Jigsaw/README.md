@@ -19,7 +19,7 @@ conda env create -f environment.yml
   - Full network uses the last dense layer before the soft max of the whole architecture for features extraction, must specify the same imgae size parameters used in training.
   -  Single network intialize a ResNet50 with the trained weights and use the GAP layer for feature extraction (not recommended).
 2. Using jigsaw_vocabulary to generate the vocabulary which generates the descriptions.txt.
-2. Using Jigsaw_model.py to train the captioning model on the extracted features by spicifying the extracted features file location.
+2. Using Jigsaw__IC_model to train the captioning model on the extracted features by spicifying the extracted features file location.
 3. Jigsaw_blue.py to check the model blue score, requires only the extracted features file location.
 4. Jigsaw_test.py used to test the captioning models on images, need specify image location and the image caption model.
 
