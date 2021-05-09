@@ -107,8 +107,5 @@ class JigsawCreator:
             if std==0:
                 continue #black patch
             x[i,...]=(x[i,...]-mean)/std #normalize the patch
-            x[i,...] = clip(x[i,...], -1.0, 1.0)
-            x[i,...] = (x[i,...] + 1.0) / 2.0 #for negative values, make the image between 0 and 1
-        final_crops=np.transpose(x,(1,2,3,0))
         final_crops=np.transpose(x,(1,2,3,0))
         return final_crops, perm_index
