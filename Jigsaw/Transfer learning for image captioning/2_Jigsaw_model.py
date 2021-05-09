@@ -143,9 +143,7 @@ def define_model(vocab_size, max_length):
 # train dataset
 
 # load training dataset (6K)
-
-#filename = 'Flickr8k_text/Flickr_8k.trainImages.txt'
-filename = '/home/student/Downloads/Semisupervised_Image_Classifier-master/Flickr8k_text/Flickr_8k.trainImages.txt'
+filename = './Flickr_8k.trainImages.txt'
 
 
 train = load_set(filename)
@@ -156,7 +154,7 @@ print('Descriptions: train=%d' % len(train_descriptions))
 # photo features
 
 #train_features = load_photo_features('features.pkl', train)
-train_features = load_photo_features('features_old.pkl', train)
+train_features = load_photo_features('features.pkl', train)
 
 
 print('Photos: train=%d' % len(train_features))
@@ -173,7 +171,7 @@ X1train, X2train, ytrain = create_sequences(tokenizer, max_length, train_descrip
 # dev dataset
 
 # load test set
-filename = '/home/student/Downloads/Semisupervised_Image_Classifier-master/Flickr8k_text/Flickr_8k.devImages.txt'
+filename = './Flickr_8k.devImages.txt'
 test = load_set(filename)
 print('Dataset: %d' % len(test))
 # descriptions
@@ -182,7 +180,7 @@ print('Descriptions: test=%d' % len(test_descriptions))
 # photo features
 
 #test_features = load_photo_features('features.pkl', test)
-test_features = load_photo_features('features_old.pkl', test)
+test_features = load_photo_features('features.pkl', test)
 
 print('Photos: test=%d' % len(test_features))
 # prepare sequences
