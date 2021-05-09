@@ -1,4 +1,5 @@
-#This folder contains the code and instruction for running jigsaw puzzle pretext task to learn to  extract features, and using it on image captioning down stream task.
+# Learning feature extraction through solving jigsaw puzzle
+This folder contains the code and instruction for running jigsaw puzzle pretext task to learn to  extract features, and using it on image captioning down stream task.
 
 # Instructions on running the code
 ## Getting started 
