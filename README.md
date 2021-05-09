@@ -54,5 +54,3 @@ Generate the puzzle patches using image_processing.py to train the keras model
 3. 3_Jigsaw_blue.py test the model using BLEU score metric
 4. 4_jigsaw_test.py used to generate descriptions of provided images
 
-Instructions on running the code is inside jigsaw directory.
-
