@@ -26,3 +26,6 @@ Contain
 Resizes the dataset and converts it to hdf5 file to be used for training
 ### Datagnerator.py
 Generate the puzzle patches using image_processing.py file to train the keras model 
+### Transfer learning for image captioning
+contains the file to use jigsaw on the downstream task
+
