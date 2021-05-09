@@ -13,12 +13,12 @@ from keras.layers import (Dense, Dropout, Concatenate, Input, Activation, Flatte
 import random
 import cv2
 def create_croppings(numpy_array):
-	# cropSize = 339
-	# cellSize = 113
-	# tileSize = 96
-	cropSize = 225
-	cellSize = 75
-	tileSize = 64
+	cropSize = 339
+	cellSize = 113
+	tileSize = 96
+# 	cropSize = 225
+# 	cellSize = 75
+# 	tileSize = 64
 	y_dim, x_dim = numpy_array.shape[:2]
 	# Have the x & y coordinate of the crop
 	crop_x = random.randrange(x_dim -  cropSize)
@@ -36,9 +36,11 @@ def create_croppings(numpy_array):
 			# number picked
 			final_crops[:, :, :,row * 3 + col]= numpy_array[y_start:y_start +  tileSize, x_start:x_start +  tileSize, :]
 	x=np.transpose(final_crops,(3,0,1,2))
-	for i,img in enumerate(x):
-            norm = cv2.normalize(img, None, alpha=0, beta=1, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_32F)
-            x[i,...]=norm
+        for i,img in enumerate(x):
+            mean, std = np.mean(x[i,...]), np.std(x[i,...])
+            if std==0:
+                continue #black image
+            x[i,...]=(x[i,...]-mean)/std
 	final_crops=x
 	return final_crops
 # extract features from each photo in the directory
