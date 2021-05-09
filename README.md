@@ -15,9 +15,10 @@ the differences are as follows:
 2. including color jittering and make a case for gray images
 3. applaying patch level normalization
 4. using Alex-net as impelemented in the paper and ResNet50 for networks backbone
-#image_preprocessing
+
+#### image_preprocessing
 contains image_transform.py that is used for image preprocessing for jigsaw, to create the croppings and apply color jittering
 #to_hdf5.py
 
-###Datagnerator
+### Datagnerator
 
