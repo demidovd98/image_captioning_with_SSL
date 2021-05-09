@@ -11,6 +11,7 @@
 # Sample Output of Model:
 
 ![Captions_For_Updated_Model](https://user-images.githubusercontent.com/45034431/117573575-aeb68d80-b0e9-11eb-9991-4414f0ba6307.JPG)
+
 note that the lighter color refers to more acceptable captions, whereas the darker color shows less acceptable captions.
 
 # Jigsaw:
