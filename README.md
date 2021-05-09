@@ -7,6 +7,12 @@
 4. Provide a demo file available with sample inputs and outputs.
 5. Provide instructions on downloading data from publicly available links (for the datasets used in the project)
 6. If a project is built on an existing code-base, it must be clearly credited and differences should be explicitly stated in the readme file. 
+
+# Sample Output of Model:
+
+![Captions_For_Updated_Model](https://user-images.githubusercontent.com/45034431/117573575-aeb68d80-b0e9-11eb-9991-4414f0ba6307.JPG)
+note that the lighter color refers to more acceptable captions, whereas the darker color shows less acceptable captions.
+
 # Jigsaw:
 Contains the files to train a jigsaw network pretext following the paper and use it for image captioning downstream task.
 The impelementation of the code is improvments on Jeremalloch work in https://github.com/Jeremalloch/Semisupervised_Image_Classifier.
