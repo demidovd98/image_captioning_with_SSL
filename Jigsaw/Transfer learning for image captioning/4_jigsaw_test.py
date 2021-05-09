@@ -2,13 +2,13 @@ from pickle import load
 from numpy import argmax
 from keras.preprocessing.sequence import pad_sequences
 
-#from keras.applications.vgg16 import VGG16 ?
+
 from keras.applications.resnet50 import ResNet50
 
 from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 
-#from keras.applications.vgg16 import preprocess_input
+
 from keras.applications.resnet import preprocess_input
 
 from keras.models import Model
@@ -46,35 +46,19 @@ def create_croppings(numpy_array):
             # v=x[i,...]
             norm = cv2.normalize(img, None, alpha=0, beta=1, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_32F)
             x[i,...]=norm
-            # data=x[i,...]
-            # info = np.finfo(data.dtype) # Get the information of the incoming image type
-            # data = data.astype(np.float64) / info.max # normalize the data to 0 - 1
-            # data = 255 * data # Now scale by 255
-            # img = data.astype(np.uint8)
-            # im = Image.fromarray(img)
-            # im.save("t22"+str(i)+".jpg")
-            # cv2.imwrite("t22"+str(i)+".jpg",img)
+
 	final_crops=x
-	#final_crops=np.transpose(x,(1,2,3,0))
-	#patch level normalization
 	return final_crops
 
 # extract features from each photo in the directory
 def extract_features_full_architecture(directory):
-	# load the model
-	# # re-structure the model
-	# new_input = Input(shape=(384, 384, 3))
+
 	my_model = load_model("/home/student/Downloads/Semisupervised_Image_Classifier-master/SSL.hdf5")
 	my_model = Model(inputs=my_model.inputs, outputs=my_model.layers[-2].output) # remove last dense layer (yeah, -2 means one before last)
-	# # summarize
-	# targetModel = ResNet50(include_top=False, weights=None,
-	#In my case, this returns me a Model() representing the desired shared network 
-	# you will need to change index (you can also use name parameter)
+
 
 	# extract features from each photo
 	features = dict()
-	# jigsaw=image_transform.JigsawCreator(max_hamming_set)
-	# targetModel=Model(inputs=targetModel.inputs,outputs=targetModel.outputs)
 		# load an image from file
 	filename = directory
 	image = load_img(filename, target_size=(256, 256))
@@ -89,6 +73,41 @@ def extract_features_full_architecture(directory):
 	image=z
 	# get features
 	feature = my_model.predict(image, verbose=0)
+	# get image id
+	return feature
+def extract_features_single_network(directory):
+
+
+	my_model = load_model("/home/student/Downloads/Semisupervised_Image_Classifier-master/model_data/res50_384_3_65/model.hdf5")
+	sourceModel = my_model.get_layer(index=9)  
+
+	new_input = Input(shape=(384, 384, 3))
+	targetModel = ResNet50(include_top=False, weights=None,
+		input_tensor=new_input, pooling="avg") #this returns a blank Model 
+	#coping the weights
+	for l_tg,l_sr in zip(targetModel.layers, sourceModel.layers):
+			wk0=l_sr.get_weights()
+			l_tg.set_weights(wk0)
+	targetModel.summary()
+
+
+	# extract features from each photo
+	features = dict()
+
+
+	# load an image from file
+	filename = directory
+	image = load_img(filename, target_size=(384, 384))
+	# convert the image pixels to a numpy array
+	image = img_to_array(image)
+
+	# reshape data for the model
+	image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
+	# # prepare the image for the VGG model
+	image = preprocess_input(image)
+	
+	# get features
+	feature = targetModel.predict(image, verbose=0)
 	# get image id
 	return feature
 

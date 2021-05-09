@@ -74,7 +74,10 @@ def Alex_net(tileSize=64, numPuzzles=9, hammingSetSize=100):
     sharedLayers = [sharedLayer(inputTensor) for inputTensor in modelInputs]
     x = Concatenate()(sharedLayers)  # Reconsider what axis to merge
     x = Flatten()(x)
+    x = Dropout(0.5)(x)
     x = Dense(4096, activation='relu')(x)
+    x = Dropout(0.5)(x)
+    x = Dense(1024, activation='relu')(x)
     x = Dense(hammingSetSize, activation='softmax')(x)
     model = Model(inputs=modelInputs, outputs=x)
 
@@ -114,7 +117,7 @@ else:
     n_workers = 1
 
 
-hdf5_path = '/home/student/Downloads/Self-Supervised_Jigsaw_Puzzle-master/prepare_data/COCO_2017_unlabeled.h5'
+hdf5_path = ' ' #path to HDF5 dataset
 batch_size = 32
 num_epochs = 1000
 hamming_set_size = 100 #number of permutations
@@ -129,7 +132,7 @@ train_dataset = hdf5_file['train_img']
 val_dataset = hdf5_file['val_img']
 test_dataset = hdf5_file['test_img']
 
-max_hamming_set = np.loadtxt("/home/student/Downloads/Semisupervised_Image_Classifier-master/hamming_set/maxHammingSet_of_25_on_Mar_03_21:48:45.txt")
+max_hamming_set = np.loadtxt(" ") #path to permutations text file
 dataGenerator = DataGenerator(batchSize=batch_size,maxHammingSet=max_hamming_set[:hamming_set_size])
 
 # Output all data from a training session into a dated folder
@@ -144,9 +147,9 @@ checkpointer = ModelCheckpoint(
 reduce_lr_plateau = ReduceLROnPlateau(
     monitor='val_loss', patience=3, verbose=1)
 early_stop = EarlyStopping(monitor='val_loss', patience=6, verbose=1)
-opt=optimizers.SGD(
-    learning_rate=0.01, momentum=0.0, nesterov=False, name="SGD", **kwargs)
-#opt = optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999)
+# opt=optimizers.SGD(
+#     learning_rate=0.01, momentum=0.0, nesterov=False, name="SGD")
+opt = optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999)
 model.compile(optimizer=opt,
               loss='categorical_crossentropy',
               metrics=['accuracy'])
