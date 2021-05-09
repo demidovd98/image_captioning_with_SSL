@@ -28,8 +28,8 @@ Resizes the dataset and converts it to hdf5 file to be used for training
 Generate the puzzle patches using image_processing.py file to train the keras model 
 ### Transfer learning for image captioning
 #### contains the files to use jigsaw on the downstream task:
-1.1_Jigsaw_generator.py extract image features for training using the model provided
-2.2_Jigsaw_model.py uses extracted features to train the captioning model
-3.3_Jigsaw_blue.py test the model using BLEU score metric
-4.4_jigsaw_test.py used to generate descriptions of provided images
+1. 1_Jigsaw_generator.py extract image features for training using the model provided
+2. 2_Jigsaw_model.py uses extracted features to train the captioning model
+3. 3_Jigsaw_blue.py test the model using BLEU score metric
+4. 4_jigsaw_test.py used to generate descriptions of provided images
 
