@@ -103,7 +103,12 @@ class JigsawCreator:
         #patch level normalization
         x=np.transpose(final_crops,(3,0,1,2))
         for i,img in enumerate(x):
-            mean, std = np.mean(x[i,...]), np.std(x[i,...])
-            x[i,...]=(x[i,...]-mean)/std
+            mean, std = np.mean(x[i,...]), np.std(x[i,...]) #calculate mean and std of patch
+            if std==0:
+                continue #black image
+            x[i,...]=(x[i,...]-mean)/std #normalize the patch
+            x[i,...] = clip(x[i,...], -1.0, 1.0)
+            x[i,...] = (x[i,...] + 1.0) / 2.0 #for negative values, make the image between 0 and 1
+        final_crops=np.transpose(x,(1,2,3,0))
         final_crops=np.transpose(x,(1,2,3,0))
         return final_crops, perm_index
