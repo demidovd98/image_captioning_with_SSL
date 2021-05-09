@@ -32,7 +32,7 @@ the differences are as follows:
 3. applaying normalization on patch level
 4. using Alex-net as impelemented in the paper and ResNet50 for shared networks
 ## Dataset
-The dataset used in training is MSCOCO unlabeled 2017, available on https://cocodataset.org/#download
+The dataset used in training is MSCOCO unlabeled 2017, available on [MSCOCO unlabeled 2017](https://cocodataset.org/#download)
 ## method components:
 #### image_preprocessing:
 contains image_transform.py that is used for image preprocessing for jigsaw, which include  the functions to create the croppings and to apply the color jittering
