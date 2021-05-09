@@ -25,7 +25,7 @@ At the end, we also provide result of conducted ablation study for the mentioned
 
 # Jigsaw:
 Contains the files to train a jigsaw network pretext following the paper [Unsupervised Learning of Visual Representations by Solving Jigsaw Puzzles](https://arxiv.org/abs/1603.09246) and use it for image captioning downstream task.
-The impelementation of the code is improvments on Jeremalloch work in https://github.com/Jeremalloch/Semisupervised_Image_Classifier.
+The impelementation of the code builds on Jeremalloch work in https://github.com/Jeremalloch/Semisupervised_Image_Classifier.
 the differences are as follows:
 1. our impelentation includes using gray images in training
 2. includes color jittering
