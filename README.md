@@ -14,7 +14,7 @@ For the sake of supervised and self-supervised pre-text tasks comparison, we pro
 Along with the code, we also provide pre-trained models for image captionig task, which can be used for any random image.
 
 # Getting started
-Create an conda environment using the dependencies file:
+Create an conda environment using the dependencies file (for a chosen SSL pre-text task):
 ```sh
 conda env create -f dependencies.yml
 ```
