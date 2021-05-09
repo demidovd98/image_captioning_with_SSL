@@ -46,8 +46,8 @@ def create_croppings(numpy_array):
 def extract_features_single_network(directory):
 
 
-	my_model = load_model("/home/student/Downloads/Semisupervised_Image_Classifier-master/model_data/res50_384_3_65/model.hdf5")
-	sourceModel = my_model.get_layer(index=9)  
+	my_model = load_model("./model.hdf5") #pretrained model
+	sourceModel = my_model.get_layer(index=9)  #ResNet index
 
 	new_input = Input(shape=(384, 384, 3))
 	targetModel = ResNet50(include_top=False, weights=None,
@@ -86,7 +86,7 @@ def extract_features_full_architecture(directory):
 	# load the model
 	# # re-structure the model
 	new_input = Input(shape=(256, 256, 3))
-	my_model = load_model("/home/student/Downloads/Semisupervised_Image_Classifier-master/model_data/res50_384_3_65/model.hdf5")
+	my_model = load_model("./model.hdf5")
 	my_model = Model(inputs=my_model.inputs, outputs=my_model.layers[-2].output) # remove last dense layer (yeah, -2 means one before last)
 	# extract features from each photo
 	features = dict()
@@ -113,8 +113,8 @@ def extract_features_full_architecture(directory):
 	return features
 
 # extract features from all images
-directory = '/home/student/Downloads/Semisupervised_Image_Classifier-master/Flickr8k/Flickr8k_Dataset/Flicker8k_Dataset/'
+directory = './Flicker8k_Dataset/'
 features = extract_features_single_network(directory)
 print('Extracted Features: %d' % len(features))
 # save to file
-dump(features, open('features_single_network.pkl', 'wb'))
+dump(features, open('features.pkl', 'wb'))
