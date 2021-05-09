@@ -42,9 +42,7 @@ conda env create -f dependencies.yml
 
 ## To train a model from scratch:
 The root folder contains the code and instructions of using SimCLR model as a pretext task for extracting features for the image captioning downstream task.
-0. Setup environment with the provided "dependencies.yml" file.
-
-(For each foolowing step you will ned to also provide a correct path to the dataset and any updated by training file):
+For each of the foolowing step you will need to provide a correct path to a chosen dataset:
 1. Run "1_data_preprocessor.py" file to extract visual features from the images and textual descriptions from the descriptions in the chosen dataset. They will be put in the "features.pkl" file and "descriptions.txt" file respectively.
 2. Run "2_train_IC_model.py" file to train the caption generator model with extracted in the previous step features. The trained model will be saved in the same root directory.
 3. Run "3_BLEU.py" file to evaluate the BLEU score of the pre-trained model.
@@ -52,7 +50,7 @@ The root folder contains the code and instructions of using SimCLR model as a pr
 5. Run "5_test.py" file to generate a caption for any image.
 
 ## To use a pre-trained model and files:
-0. Download the pre-trained model, extracted features and descriptions, and tokenizer from the shared folder [Image_Captioning with_SimCLR](https://mbzuaiac-my.sharepoint.com/:f:/g/personal/20020067_mbzuai_ac_ae/EpbmvMjAMQlNij__vSXoOMQBdv34t5Ws47uIeUdH4LgT3A?e=xQGWWv) and put them into a "Pre-trained/" folder (to the same folder with code).
+0. Download the pre-trained model, extracted features and descriptions, and tokenizer from the shared folder [Image_Captioning with_SimCLR](https://mbzuaiac-my.sharepoint.com/:f:/g/personal/20020067_mbzuai_ac_ae/EpbmvMjAMQlNij__vSXoOMQBdv34t5Ws47uIeUdH4LgT3A?e=xQGWWv) and put them all into a "Pre-trained/" folder (does not exist by default).
 1. Run "3_BLEU.py" file to evaluate the BLEU score of the pre-trained model. (Also provide a correct path to a chosen dataset).
 2. Run "5_test.py" file to generate a caption for any image.(An image should be in the same code folder, or the full path to it should be provided).
 
