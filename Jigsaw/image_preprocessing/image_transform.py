@@ -5,6 +5,7 @@ import random
 import time
 import itertools
 import warnings
+import cv2
 from PIL import Image
 class JigsawCreator: 
     """
@@ -105,5 +106,6 @@ class JigsawCreator:
         for i,img in enumerate(x):
             norm = cv2.normalize(img, None, alpha=0, beta=1, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_32F)
             x[i,...]=norm
+            #x[i,...]=(x[i,...]-mean)/std
         final_crops=np.transpose(x,(1,2,3,0))
         return final_crops, perm_index
