@@ -103,6 +103,7 @@ class JigsawCreator:
         #patch level normalization
         x=np.transpose(final_crops,(3,0,1,2))
         for i,img in enumerate(x):
+            mean, std = np.mean(x[i,...]), np.std(x[i,...])
             x[i,...]=(x[i,...]-mean)/std
         final_crops=np.transpose(x,(1,2,3,0))
         return final_crops, perm_index
