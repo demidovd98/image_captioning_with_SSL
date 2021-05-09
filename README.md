@@ -19,9 +19,9 @@ the differences are as follows:
 The dataset used in training is MSCOCO unlabeled 2017, available on https://cocodataset.org/#download
 ## Code flow
 #### image_preprocessing
-contains image_transform.py that is used for image preprocessing for jigsaw, to create the croppings and apply color jittering
+contains image_transform.py that is used for image preprocessing for jigsaw, which include  the functions to create the croppings and to apply the color jittering
 ### hamming_set
-Contain 
+Contain maximal_hamming.py which is used to generate the permutations
 ### to_hdf5.py
 Resizes the dataset and converts it to hdf5 file to be used for training
 ### Datagnerator.py
