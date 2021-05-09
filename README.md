@@ -45,7 +45,7 @@ This folder contains the code and instructions to train jigsaw puzzle pretext ta
 3. Jigsaw_blue.py to check the model blue score, requires only the extracted features file location.
 4. Jigsaw_test.py used to test the captioning models on images, need specify image location and the image caption model.
 
-# pre-trained models
+# Pre-trained models
 1. Pre-trained model for jigsaw with Resnet 50 with 67% accuracy on pretext task [Jigsaw_ResNet50](https://mbzuaiac-my.sharepoint.com/:u:/g/personal/20020053_mbzuai_ac_ae/Ed2xPGXaqqpNuQfawHm5HvYBUbW4fL3HNLnTr9HAcrtDvQ?e=3OnR8N)
 2. Pre-trained model of image captioning using the jigsaw extracted features [Image_captioning_jigsaw](https://mbzuaiac-my.sharepoint.com/:u:/g/personal/20020053_mbzuai_ac_ae/EXHOb314z-1JlFZKr-umQ8kBOl_A9Q6s3ijJxWxknnheNQ?e=2Q00iC)
 
@@ -96,6 +96,6 @@ This folder contains the code and instructions to train jigsaw puzzle pretext ta
 3. Jigsaw_test_blue.py to check the model blue score, requires only the extracted features file location.
 4. Jigsaw_test_images.py used to test the trained captioning model on real images, need specify image location and the used image captioning model.
 
-# pre-trained models
+# Pre-trained models
 1. Pre-trained model for jigsaw with Resnet 50 with 67% accuracy on pretext task [Jigsaw_ResNet50](https://mbzuaiac-my.sharepoint.com/:u:/g/personal/20020053_mbzuai_ac_ae/Ed2xPGXaqqpNuQfawHm5HvYBUbW4fL3HNLnTr9HAcrtDvQ?e=3OnR8N)
 2. Pre-trained model of image captioning using the jigsaw extracted features [Image_captioning_jigsaw](https://mbzuaiac-my.sharepoint.com/:u:/g/personal/20020053_mbzuai_ac_ae/EXHOb314z-1JlFZKr-umQ8kBOl_A9Q6s3ijJxWxknnheNQ?e=2Q00iC)
