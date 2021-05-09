@@ -1,4 +1,4 @@
-# Image Captioning with Self-Supervised Learning Feature Extraction
+# Image Captioning with Self-Supervised Learning Visual Feature Extraction
 A problem of generating a textual description for a given image with using self-supervised learned approaches (SimCLR and Jigsaw Puzzle solving) as a pre-text task is considered in this work.
 
 
