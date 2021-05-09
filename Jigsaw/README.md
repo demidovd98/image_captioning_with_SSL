@@ -14,7 +14,7 @@ conda env create -f environment.yml
 
 ## Downstream task
 1. using Jigsaw_feature_extraction.py, load the trained model and spacify dataset directory, and choose one of two functions  to extract the features: 
-  - Full network uses the last dense layer before the soft max of the whole architecture for features extraction.
+  - Full network uses the last dense layer before the soft max of the whole architecture for features extraction, must specify the same iamge size parameters used in training
   -  single network intialize a ResNet50 with the trained weights and use the GAP layer for feature extraction (not recommended).
 2. using jigsaw_vocabulary to generate the vocabulary which generates the descriptions.txt
 2. using Jigsaw_model.py to train the captioning model on the extracted features by spicifying the extracted features file location.
