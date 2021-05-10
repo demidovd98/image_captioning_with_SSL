@@ -78,7 +78,7 @@ contains image_transform.py that is used for image preprocessing for jigsaw, whi
 
 ### Downstream Task
 1. Run Jigsaw_feature_extraction.py, load the trained model and spacify dataset directory, and choose one of two functions  to extract the features: 
-  - Full network uses the last dense layer before the soft max of the whole architecture for features extraction, must specify the same imgae size parameters used in training.
+  - Full architecture uses the last dense layer before the soft max of the whole architecture for features extraction, must specify the same imgae size parameters used in training.
   -  Single network intialize a ResNet50 with the trained weights and use the GAP layer for feature extraction (not recommended).
 2. Run jigsaw_captions.py to extract textual descriptions in the "description.txt" file from the chosen dataset.
 3. Run Jigsaw__IC_model.py to train the captioning model on the extracted features by spicifying the extracted features file location and the descriptions file.
