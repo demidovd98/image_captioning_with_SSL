@@ -1,4 +1,4 @@
-# inclusive of both pretext tasks and downstream task
+# inclusive of both pretext tasks
 name: tf
 channels:
   - anaconda
